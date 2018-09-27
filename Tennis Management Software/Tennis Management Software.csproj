@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{507686F2-7500-4EBC-8F20-BD0B23A56F17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tennis_Management_Software</RootNamespace>
+    <AssemblyName>Tennis Management Software</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Tennis Management Software</ProductName>
+    <PublisherName>Panayiotis Halios</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>459AB28C8AF1FCB66483E31F98DCBA08FB62404A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Tennis Management Software_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Tennis.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Tennis Management Software_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Tennis_Management_Software.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientNetwork\Client.cs" />
+    <Compile Include="ClientNetwork\DataReceivedEventArgs.cs" />
+    <Compile Include="ClientNetwork\Packet.cs" />
+    <Compile Include="ClientNetwork\PacketHeader.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TennisClub.cs" />
+    <Compile Include="Timetabling\Visualization\Cell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Timetabling\Visualization\Cell.Designer.cs">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coach.cs" />
+    <Compile Include="CoachForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoachForm.Designer.cs">
+      <DependentUpon>CoachForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetabling\CoachTimetable.cs" />
+    <Compile Include="Imaging\ImagePart.cs" />
+    <Compile Include="Imaging\ComposedImage.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="InputInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputInformation.Designer.cs">
+      <DependentUpon>InputInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ITennisPlayer.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Imaging\ImageHandling.cs" />
+    <Compile Include="PictureInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PictureInput.Designer.cs">
+      <DependentUpon>PictureInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPersonForm.Designer.cs">
+      <DependentUpon>SelectPersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Saving\Serialization.cs" />
+    <Compile Include="LessonFees.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetabling\StudentTimetable.cs" />
+    <Compile Include="TennisPlayerInformation.cs" />
+    <Compile Include="Time.cs" />
+    <Compile Include="Timetabling\Timetable.cs" />
+    <Compile Include="Timetabling\Visualization\TimetableCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetabling\Visualization\TimetableCreatorForm.Designer.cs">
+      <DependentUpon>TimetableCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetabling\TimetableInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetabling\TimetableInputForm.Designer.cs">
+      <DependentUpon>TimetableInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament\SetScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tournament\SetScoreForm.Designer.cs">
+      <DependentUpon>SetScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament\TournamentCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tournament\TournamentCreatorForm.Designer.cs">
+      <DependentUpon>TournamentCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament\TournamentOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tournament\TournamentOptionForm.Designer.cs">
+      <DependentUpon>TournamentOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tournament\TournamentSettings.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetabling\Visualization\Cell.resx">
+      <DependentUpon>Cell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoachForm.resx">
+      <DependentUpon>CoachForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputInformation.resx">
+      <DependentUpon>InputInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureInput.resx">
+      <DependentUpon>PictureInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPersonForm.resx">
+      <DependentUpon>SelectPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetabling\Visualization\TimetableCreatorForm.resx">
+      <DependentUpon>TimetableCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetabling\TimetableInputForm.resx">
+      <DependentUpon>TimetableInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tournament\SetScoreForm.resx">
+      <DependentUpon>SetScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tournament\TournamentCreatorForm.resx">
+      <DependentUpon>TournamentCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tournament\TournamentOptionForm.resx">
+      <DependentUpon>TournamentOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Tennis Management Software_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSACAL">
+      <Guid>{8E27C92E-1264-101C-8A2F-040224009C02}</Guid>
+      <VersionMajor>7</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tennis.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
